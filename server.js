@@ -20,6 +20,8 @@ const config = {
 
 sql.connect(config);
 
+app.get('/', (req, res)=> res.send('Hello, world !'))
+
 app.get('/inspection/:rid', async (req, res) => {
   const { rid } = req.params;
 
@@ -41,6 +43,6 @@ app.get('/inspection/:rid', async (req, res) => {
   }
 });
 
-app.listen(3000, '0.0.0.0', () =>
+app.listen(+process.env.PORT, '0.0.0.0', () =>
   console.log('API running')
 );
