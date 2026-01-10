@@ -30,7 +30,8 @@ app.get('/inspection/:rid', async (req, res) => {
       SELECT DISTINCT
         d.RID_no,
         d.RI_no,
-        i.ERP_po_no
+        i.ERP_po_no,
+        i.RI_mat_oldcode
       FROM dv_RM_inspectiondet d
       JOIN dv_RM_inspection i
         ON d.RI_no = i.RI_no
